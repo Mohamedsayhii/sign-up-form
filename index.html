@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="image-sidebar">
@@ -21,41 +22,43 @@
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s.
       </p>
-      <form action="#">
-        <legend>Let's do this!</legend>
-        <div class="form-style">
-          <div class="label-input">
-            <label for="firstname">FIRST NAME</label>
-            <input type="text" id="firstname"></input>
+      <form action="#" method="post" id="signupForm">
+        <div class="la7dhabarka">
+          <legend>Let's do this!</legend>
+          <div class="form-style">
+            <div class="label-input">
+              <label for="firstname">FIRST NAME</label>
+              <input type="text" id="firstname" required pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" placeholder=" "></input>
+            </div>
+            <div class="label-input">
+              <label for="lastname">LAST NAME</label>
+              <input type="text" id="lastname" required pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" placeholder=" "></input>
+            </div>
           </div>
-          <div class="label-input">
-            <label for="lastname">LAST NAME</label>
-            <input type="text" id="lastname"></input>
+          <div class="form-style">
+            <div class="label-input">
+              <label for="email">EMAIL</label>
+              <input type="email" id="email" required placeholder=" "></input>
+            </div>
+            <div class="label-input">
+              <label for="phone">PHONE NUMBER</label>
+              <input type="tel" id="phone" required pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" placeholder=" "></input>
+            </div>
+          </div>
+          <div class="form-style password-inputs">
+            <div class="label-input">
+              <label for="pass">PASSWORD</label>
+              <input type="password" style="border-color: #c00;" id="pass" onkeyup="check();" required><h6 id="message">* Passwords do not match</h6></input>
+            </div>
+            <div class="label-input">
+              <label for="confirmpass">CONFIRM PASSWORD</label>
+              <input type="password" style="border-color: #c00;" id="confirmpass" onkeyup="check();" required></input>
+            </div>
           </div>
         </div>
-        <div class="form-style">
-          <div class="label-input">
-            <label for="email">EMAIL</label>
-            <input type="email" id="email"></input>
-          </div>
-          <div class="label-input">
-            <label for="phone">PHONE NUMBER</label>
-            <input type="tel" id="phone"></input>
-          </div>
-        </div>
-        <div class="form-style">
-          <div class="label-input">
-            <label for="pass">PASSWORD</label>
-            <input type="password" id="pass"></input>
-          </div>
-          <div class="label-input">
-            <label for="confirmpass">CONFIRM PASSWORD</label>
-            <input type="password" id="confirmpass"></input>
-          </div>
-        </div>
+        <button type="submit" id="submit-button">Create Account</button>
       </form>
-      <button type="submit">Create Account</button>
-      <p>Already have an account? <span>Log in</span></p>
+      <p id="login">Already have an account? <span>Log in</span></p>
     </div>
   </body>
 </html>
